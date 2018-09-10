@@ -1,0 +1,15 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  overflow: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  box-sizing: border-box;
+}

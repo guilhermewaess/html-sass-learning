@@ -1,0 +1,22 @@
+{
+  "name": "css-course-projects",
+  "version": "1.0.0",
+  "description": "projects for css learning",
+  "author":{
+    "name": "Guilherme Waess",
+    "email": "guilherme.waess@gmail.com"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm-run-all -p compile-sass start-server",
+    "compile-sass": "node-sass sass/main.scss css/style.css -w",
+    "start-server": "live-server"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.0",
+    "node-sass": "^4.9.3",
+    "npm-run-all": "^4.1.3"
+  }
+}

@@ -53,7 +53,7 @@ body {
 
 .logo {
   height: 2rem;
-  margin-left: 1.875rem; }
+  margin-left: 1.25rem; }
 
 .search {
   flex: 0 0 40%;
@@ -67,7 +67,7 @@ body {
     padding: 0.4375rem 1.25rem;
     border-radius: 100px;
     width: 90%;
-    transition: all .2s;
+    transition: all 0.2s;
     margin-right: -3rem; }
     .search__input:focus {
       outline: none;
@@ -91,7 +91,6 @@ body {
     width: 1.4375rem; }
 
 .user-nav {
-  background-color: greenyellow;
   align-self: stretch;
   display: flex;
   align-items: center; }
@@ -124,7 +123,53 @@ body {
     align-items: center; }
   .user-nav__user-photo {
     height: 2.3438rem;
-    border-radius: 50%; }
+    border-radius: 50%;
+    margin-right: 0.625rem; }
+
+.side-nav {
+  font-size: 0.875rem;
+  list-style: none;
+  margin-top: 2.1875rem; }
+  .side-nav__item {
+    position: relative; }
+    .side-nav__item:not(:last-child) {
+      margin-bottom: 0.3125rem; }
+  .side-nav__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0.1875rem;
+    background-color: var(--color-primary);
+    transform: scaleY(0);
+    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s; }
+  .side-nav__item:hover::before, .side-nav__item--active::before {
+    transform: scaleY(1);
+    width: 100%; }
+  .side-nav__item:active::before {
+    background-color: var(--color-primary-light); }
+  .side-nav__link, .side-nav__link:visited {
+    color: var(--color-grey-light-1);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 0.9375rem 1.875rem;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center; }
+  .side-nav__icon {
+    width: 1.0938rem;
+    height: 1.0938rem;
+    margin-right: 1.25rem;
+    fill: currentColor; }
+
+.legal {
+  font-size: 0.75rem;
+  color: var(--color-grey-light-4);
+  text-align: center;
+  padding: 1.5625rem; }
 
 .header {
   font-size: 0.875rem;
@@ -147,8 +192,12 @@ body {
 
 .sidebar {
   background-color: var(--color-grey-dark-1);
-  flex: 0 0 18%; }
+  flex: 0 0 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
 
 .hotel-view {
   background-color: #fff;
-  flex: 1; }
+  flex: 1;
+  height: 60rem; }

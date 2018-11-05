@@ -103,9 +103,6 @@
     border-radius: 50%;
     margin-right: 0.625rem;
   }
-
-  &__user-name {
-  }
 }
 
 // SIDE NAV
@@ -218,7 +215,7 @@
     vertical-align: center;
   }
 
-  &__icon-location{
+  &__icon-location {
     margin-right: 0.3125rem;
   }
 
@@ -228,13 +225,12 @@
     color: #fff;
     padding: 0 1.4063rem;
     align-self: stretch;
-    
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-
 
   &__rating-count {
     font-size: 0.5rem;
@@ -260,8 +256,17 @@
   cursor: pointer;
   transition: all 0.2s;
 
+  & span {
+    margin-left: 0.1875rem;
+    transition: margin-left 0.2s;
+  }
+
   &:hover {
     color: var(--color-grey-dark-1);
+
+    span {
+      margin-left: 0.5rem;
+    }
   }
 
   &:focus {
@@ -284,5 +289,133 @@
   100% {
     transform: scale(1);
     box-shadow: none;
+  }
+}
+
+// PARAGRAPH
+.paragraph:not(:last-of-type) {
+  margin-bottom: 1.25rem;
+}
+
+// LIST
+
+.list {
+  list-style: none;
+  margin: 1.875rem 0;
+  padding: 1.875rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line);
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.4375rem;
+  }
+
+  &__item::before {
+    content: "";
+    display: inline-block;
+    height: 0.625rem;
+    width: 0.625rem;
+    margin-right: 0.4375rem;
+
+    //old browsers
+    // background-image: url(../img/chevron-thin-right.svg);
+    // background-size: cover;
+
+    //newer browsers
+    background-color: var(--color-primary);
+    -webkit-mask-image: url(../img/chevron-thin-right.svg);
+    -webkit-mask-size: cover;
+    mask-image: url(../img/chevron-thin-right.svg);
+    mask-size: cover;
+  }
+}
+//RECOMMEND
+.recommend {
+  font-size: 0.8125rem;
+  color: var(--color-grey-dark-3);
+
+  display: flex;
+  align-items: center;
+
+  &__count {
+    margin-right: auto;
+  }
+
+  &__photo {
+    box-sizing: content-box;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    border: 0.1875rem solid #fff;
+
+    &:not(:last-child) {
+      margin-right: -0.9375rem;
+    }
+  }
+}
+
+// REVIEWS
+.review {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 1.875rem;
+  margin-bottom: 2.1875rem;
+  position: relative;
+  overflow: hidden;
+
+  &__text {
+    margin-bottom: 1.25rem;
+    z-index: 10;
+    position: relative;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+
+  &__photo {
+    height: 2.8125rem;
+    width: 2.8125rem;
+    border-radius: 50%;
+    margin-right: 0.9375rem;
+  }
+
+  &__user-box {
+    margin-right: auto;
+  }
+
+  &__user-name {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+
+  &__user-date {
+    font-size: 0.625rem;
+    color: var(--color-grey-dark-3);
+  }
+
+  &__rating {
+    color: var(--color-primary);
+    font-size: 1.375rem;
+    font-weight: 300;
+  }
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: -1.7188rem;
+    left: -0.625rem;
+    line-height: 1;
+    font-size: 12.5rem;
+    color: var(--color-grey-light-2);
+    font-family: sans-serif;
+    z-index: 1;
   }
 }
